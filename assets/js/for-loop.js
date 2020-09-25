@@ -1,34 +1,8 @@
-// PROGRAM THAT PERFORM CRUD ON VERSATILE MEMORY
+// SCRIPT THAT PERFORMS CRUD ON BROWSER MEMORY(LOCAL STORAGE)
 
-// let checkDB = // Student Database
-// [ 
-//   {
-//     "name" : "Ayodele Samuel Adebayo",
-//     "department" : "Computer Science",
-//     "gradePoint" : "3.6",
-//     "img" : "assets/img/3.jpeg",
-//     "admissionStatus" : "Admitted"
-//   },
-//   {
-//     "name" : "Durojaye Felix Toba",
-//     "department" : "Computer Science",
-//     "gradePoint" : "3.7",
-//     "img" : "assets/img/5.jpg",
-//     "admissionStatus" : "Admitted"
-
-//   },
-//   {
-//     "name" : "Ayodele Samuel Adebayo",
-//     "department" : "Political Science",
-//     "gradePoint" : "3.8",
-//     "img" : "assets/img/4.jpg",
-//     "admissionStatus" : "Admitted"
-//   }
-// ]
-
-let checkDB = JSON.parse(localStorage.getItem("testroom"))
-if (checkDB == null){
-  checkDB = []
+let checkDB = JSON.parse(localStorage.getItem("collegeDatabase")) // try and get values from storage
+if (checkDB == null){ // checks if the database does not exist
+  checkDB = [] // create an empty
 }
 function viewRecord()
 { // list of all students in the checkDB (array)
@@ -110,7 +84,7 @@ let removeStudent = (studentId) =>
   if (dangerZone == true)
   {
     checkDB.splice(studentId, 1); // locate and delete the pass id
-    localStorage.setItem("testroom", JSON.stringify(checkDB))
+    localStorage.setItem("collegeDatabase", JSON.stringify(checkDB))
   }
 
   viewRecord() // show updated student database
@@ -135,15 +109,16 @@ let updateStudentRecord = (studentId) =>
 let updatedRecord = () =>
 {
   studentId = document.getElementById("mark").value;
-  updatedRecord ={
+  updatedRecord = {
 
     "name" : document.getElementById("fullname").value,
     "department" : document.getElementById("department").value,
-    "gradepoint" : document.getElementById("gradepoint").value
+    "gradePoint" : document.getElementById("gradepoint").value,
+    "img" : "assets/img/4.jpg",
   }
   checkDB[studentId] = updatedRecord
-localStorage.setItem("testroom", JSON.stringify(checkDB))
-viewRecord();
+  localStorage.setItem("collegeDatabase", JSON.stringify(checkDB))
+  viewRecord();
   
 }
 
