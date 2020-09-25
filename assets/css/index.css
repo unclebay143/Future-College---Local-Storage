@@ -1,0 +1,77 @@
+body{
+  background: rgb(228, 221, 221);
+}
+body .heading{
+  text-align: center;
+  padding: 12px;
+  font-size: 3rem;
+}
+.form #search{
+  background: rgb(187, 187, 136);
+}
+.form{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 10px;
+}
+.form input{
+  padding: 12px;
+  border-radius: 10px;
+  border-color: antiquewhite;
+  border: 1px;
+  outline: none;
+  background: #ccdd;
+}
+.form input:focus{
+  border: 2px solid red;
+}
+.form button#add-btn{
+  color: #fff;
+  background: rgb(39, 110, 39);
+}
+.student-cards{
+  display: block;
+  height: 100vh;
+  width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.student-cards .profile {
+  float: left;
+
+}
+.profile img{
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+}
+.student-cards .profile .student_details{
+  margin: 12px;
+}
+
+.student-cards .profile .btn
+{
+  display: block;
+  margin-left: 12px;
+}
+.profile .btn .del-btn,
+.profile .btn .edit-btn,
+.form button{
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px 12px;
+  background: greenyellow;
+  cursor: pointer;
+}
+.profile .btn .del-btn{
+  background: tomato;
+  color: #fff;
+}
+.profile .btn .edit-btn{
+  background: #333;
+  color: #fff;
+}
