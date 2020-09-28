@@ -132,7 +132,7 @@ let updatedRecord = () =>
 let searchRecord = () => {
 
   lookFor = document.getElementById("search").value;
-  checkDB = checkDB.filter(x=> x.name == lookFor;
+  checkDB = checkDB.filter(x=> x.name == lookFor);
   if (checkDB.length <= 1){
     
     document.getElementById("searchResult").innerHTML = checkDB.length + " Record Found"
