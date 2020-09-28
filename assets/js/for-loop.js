@@ -67,7 +67,7 @@ function newStudentEntry()
       "admissionStatus" : "Admitted"
     }
     checkDB.push(newRecord);
-    localStorage.setItem("testroom", JSON.stringify(checkDB))
+    localStorage.setItem("collegeDatabase", JSON.stringify(checkDB))
     viewRecord();
 }
 
@@ -121,5 +121,31 @@ let updatedRecord = () =>
   viewRecord();
   
 }
+
+
+/* 
+
+  Search function
+
+*/
+
+let searchRecord = () => {
+
+  lookFor = document.getElementById("search").value;
+  checkDB = checkDB.filter(x=> x.name == lookFor;
+  if (checkDB.length <= 1){
+    
+    document.getElementById("searchResult").innerHTML = checkDB.length + " Record Found"
+    viewRecord()
+
+  }
+  else{
+
+    document.getElementById("searchResult").innerHTML = checkDB.length + " Records Found"
+    viewRecord()
+    
+  }
+}
+
 
 

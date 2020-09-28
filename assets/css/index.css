@@ -1,3 +1,14 @@
+/* resetting  */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* utilities  */
+button{
+  font-weight: 600;
+}
 body{
   background: rgb(228, 221, 221);
 }
@@ -6,15 +17,13 @@ body .heading{
   padding: 12px;
   font-size: 3rem;
 }
-.form #search{
-  background: rgb(187, 187, 136);
-}
+
 .form{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 25px;
   margin: 10px;
 }
 .form input{
@@ -24,14 +33,41 @@ body .heading{
   border: 1px;
   outline: none;
   background: #ccdd;
+  margin: 12px;
 }
 .form input:focus{
   border: 2px solid red;
 }
-.form button#add-btn{
+.form input[type=file]{
+  width: 200px;
+}
+.form button#add-btn,
+.form button#update-btn{
   color: #fff;
   background: rgb(39, 110, 39);
 }
+
+/* Search form and button */
+#searchContainer{
+  /* override form class style */
+  flex-direction: row; 
+  gap: 2px;
+}
+.form #search{
+  background: rgb(187, 187, 136);
+}
+.form #search-btn{
+  color: #fff;
+  background: #444;
+}
+.resp span#searchResult{
+  display: block;
+  font-size: 23px;
+  text-align: center;
+}
+
+
+/* Student Profile card */
 .student-cards{
   display: block;
   height: 100vh;
@@ -41,7 +77,7 @@ body .heading{
 }
 .student-cards .profile {
   float: left;
-
+  margin-top: 50px;
 }
 .profile img{
   width: 200px;
@@ -54,8 +90,10 @@ body .heading{
 
 .student-cards .profile .btn
 {
-  display: block;
+  display: flex;
   margin-left: 12px;
+  flex-direction: column;
+  gap: 12px;
 }
 .profile .btn .del-btn,
 .profile .btn .edit-btn,
@@ -66,6 +104,8 @@ body .heading{
   padding: 10px 12px;
   background: greenyellow;
   cursor: pointer;
+  width: 150px;
+  
 }
 .profile .btn .del-btn{
   background: tomato;
@@ -74,4 +114,80 @@ body .heading{
 .profile .btn .edit-btn{
   background: #333;
   color: #fff;
+}
+
+
+@media only screen and (max-width: 920px)
+{
+
+  .form .input-con{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .student-cards{
+    display: block;
+    height: 100vh;
+    max-width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .student-cards .profile {
+    margin: 10px;
+  }
+
+}
+@media only screen and (max-width: 800px)
+{
+  .container{
+    max-width: 800px;
+  }
+
+  .form .input-con{
+    margin: 0 auto;
+    display: flex;
+    flex-direction:column;
+  }
+  .student-cards{
+    display: block;
+    height: 100vh;
+    max-width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .student-cards .profile {
+    margin: 0 auto;
+    position: relative;
+  }
+
+
+
+}
+@media only screen and (max-width: 400px)
+{
+
+  .form .input-con{
+    margin: 0 auto;
+    display: flex;
+    flex-direction:column;
+  }
+  .student-cards{
+    display: block;
+    height: 100vh;
+    max-width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .student-cards .profile {
+    margin-left: 20vw; 
+    margin-top: 23px;   
+  }
+  .profile .btn .del-btn,
+  .profile .btn .edit-btn,
+  .form button{
+    margin-top: 12px;
+  }
+
+
+
 }
