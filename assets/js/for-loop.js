@@ -4,11 +4,17 @@ let checkDB = JSON.parse(localStorage.getItem("collegeDatabase")) // try and get
 if (checkDB == null){ // checks if the database does not exist
   checkDB = [] // create an empty
 }
+
+/*
+  >>>> Function to View all record in local storage <<<<
+*/
 function viewRecord()
 { // list of all students in the checkDB (array)
+
   var tempRecord = "";
   for(i=0; i < checkDB.length; i++)
   {
+
     tempRecord +=
     `
       <div class="profile" id="${i}">
@@ -34,30 +40,38 @@ function viewRecord()
       </div>
     `  
   };
+
   document.getElementById("students").innerHTML = tempRecord;
+
 };
 
 viewRecord(); // revoke function listOfStudent
 
+
+
+
 /* 
-
   >>>> Add new student after admission <<<<
-
 */
 
 function newStudentEntry()
 {
+
   // binding values from form to variable for validation 
   fullname = document.getElementById("fullname").value;
   department = document.getElementById("department").value;
   gradePoint = document.getElementById("gradepoint").value;
 
  
-  if (!name && !department && !gradePoint){  // empty form validation control 
+  if (!name && !department && !gradePoint)
+  {  // empty form validation control 
+
     alert("can't be empty")
+
   }
   else 
   {
+
     let newRecord =
     { // binding values to array object keys
       "name" : fullname,
@@ -69,9 +83,10 @@ function newStudentEntry()
     checkDB.push(newRecord);
     localStorage.setItem("collegeDatabase", JSON.stringify(checkDB))
     viewRecord();
-}
 
   }
+
+}
   
 /* 
   >>>> Function to delete student record <<<<
@@ -92,7 +107,7 @@ let removeStudent = (studentId) =>
 }
 
 /* 
-  Function to Edit student entry
+  >>>> Function to Edit student entry <<<<
 */
 
 let updateStudentRecord = (studentId) =>
@@ -107,7 +122,7 @@ let updateStudentRecord = (studentId) =>
 }
 
 let updatedRecord = () =>
-{
+{ // function to collate and store new updated details
   studentId = document.getElementById("mark").value;
   updatedRecord = {
 
@@ -125,7 +140,7 @@ let updatedRecord = () =>
 
 /* 
 
-  Search function
+  >>>> Search function <<<<
 
 */
 
@@ -146,6 +161,3 @@ let searchRecord = () => {
     
   }
 }
-
-
-
