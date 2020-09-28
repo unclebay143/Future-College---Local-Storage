@@ -7,20 +7,33 @@
   <title>WinnerSamTK School</title>
 </head>
 <body>
-  <div class="heading">Future College</div>
-  <div class="form">
-    <input type="hidden" id="mark">
-    <input type="text" placeholder="search" id="search" required>
-    <input type="text" placeholder="Enter Student Full Name" id="fullname" required>
-    <input type="text" placeholder="Add department" id="department" required>
-    <input type="text" placeholder="Add grade point" id="gradepoint" required>
-    <input type="file" placeholder="Add grade point" id="pic" required>
-    <button id="add-btn" onclick="newStudentEntry();">Admit Student</button>
-    <button id="add-btn" onclick="updatedRecord();">Update</button>
-  </div>
+  <div class="container">
 
-  <!-- Javascript Dom Target -->
-  <div class="student-cards" id="students">
+    <div class="heading">Future College</div>
+    <div class="form">
+      <div class="input-con">
+        <input type="hidden" id="mark">
+        <input type="text" placeholder="Enter Student Full Name" id="fullname" required>
+        <input type="text" placeholder="Add department" id="department" required>
+        <input type="text" placeholder="Add grade point" id="gradepoint" required>
+        <input type="file" placeholder="Add grade point" id="pic" required>
+      </div>
+      <div class="btn-con">
+        <button id="add-btn" onclick="newStudentEntry();">Admit Student</button>
+        <button id="update-btn" onclick="updatedRecord();">Update</button>
+      </div>
+    </div>
+    <!-- search section -->
+    <div class="form" id="searchContainer">
+      <input type="text" placeholder="search" id="search" required>
+      <button id="search-btn" onclick="searchRecord()">Lookup</button>
+    </div>
+  <div class="resp">
+    <span id="searchResult"></span>
+  </div>
+    <!-- Javascript Dom Target -->
+    <div class="student-cards" id="students">
+    </div>
   </div>
   <!-- JavaScript File -->
   <script src="/assets/js/for-loop.js"></script>
